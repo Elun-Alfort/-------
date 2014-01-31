@@ -16,10 +16,10 @@ public class main {
 		while(true){
 			System.out.println("グー = g ： チョキ = c ： パー = p のように入力してください。");
 			input = sc.nextLine();
-			int uhand=gatofa(input);
+			int uhand=playerSelect(input);
 			if(uhand==4) continue;
 			int cpu = rnd.nextInt(3);
-			System.out.println("コンピューターの出した結果"+atushi(cpu));
+			System.out.println("コンピューターの出した結果"+cpu(cpu));
 			if(uhand==(cpu+1)%3){
 				System.out.println("あなたの負けです");
 			}else if(uhand==cpu){
@@ -30,7 +30,7 @@ public class main {
 		}
 
 	}
-	private static int gatofa(String input){
+	private static int playerSelect(String input){
 		String[] hands = {"g","c","p"};
 		for(int i=0;i<3;i++){
 			if(hands[i].equals(input)){
@@ -42,7 +42,7 @@ public class main {
 		}
 		return 4;
 	}
-	private static String atushi(int cpu){
+	private static String cpu(int cpu){
 		String[] hands={"g","c","p"};
 				return hands[cpu];
 	}
